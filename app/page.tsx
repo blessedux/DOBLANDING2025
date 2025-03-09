@@ -7,11 +7,13 @@ import Benefits from "../components/Benefits"
 import TechStack from "../components/TechStack"
 import CTA from "../components/CTA"
 import Footer from "../components/Footer"
+import Partners from "@/components/Partners"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Hero />
+      <Partners />
       <Problem />
       <Solution />
       <HowItWorks />

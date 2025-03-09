@@ -30,7 +30,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <Image src="/logo.svg" alt="DOB Protocol" width={40} height={40} />
+              <Image src="/dob_imagotipo.svg" alt="DOB Protocol" width={180} height={180} />
             </Link>
           </div>
 
