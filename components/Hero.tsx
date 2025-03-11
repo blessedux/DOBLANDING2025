@@ -19,14 +19,104 @@ const cardVariants = {
 };
 
 const cardVariantsAbove = {
-  initial: { y: -384, height: '12rem' },
+  initial: { y: -192, height: '12rem' },
   animate: {
-    y: [0, 192, 192, 384],
-    height: ['12rem', '8rem', '8rem', '8rem'],
+    y: [0, 192, 384],
+    height: ['12rem', '8rem', '8rem'],
+    transition: {
+      duration: 12,
+      ease: 'easeInOut',
+      times: [0, 0.5, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsTop = {
+  initial: { y: -576, height: '12rem' },
+  animate: {
+    y: [-192, 0, 0, 192],
+    height: ['12rem', '12rem', '8rem', '8rem'],
     transition: {
       duration: 12,
       ease: 'easeInOut',
       times: [0, 0.333, 0.666, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsMiddle = {
+  initial: { y: -192, height: '8rem' },
+  animate: {
+    y: [192, 192, 384, 384],
+    height: ['8rem', '8rem', '8rem', '8rem'],
+    transition: {
+      duration: 12,
+      ease: 'easeInOut',
+      times: [0, 0.333, 0.666, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsLeftTop = {
+  initial: { y: -192, height: '12rem' },
+  animate: {
+    y: [0, 192, 384],
+    height: ['12rem', '8rem', '8rem'],
+    transition: {
+      duration: 12,
+      ease: 'easeInOut',
+      times: [0, 0.5, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsLeftMiddle = {
+  initial: { y: -192, height: '8rem' },
+  animate: {
+    y: [0, 192, 384],
+    height: ['8rem', '8rem', '8rem'],
+    transition: {
+      duration: 12,
+      ease: 'easeInOut',
+      times: [0, 0.5, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsLeftBottom = {
+  initial: { y: -192, height: '8rem' },
+  animate: {
+    y: [0, 192, 384],
+    height: ['8rem', '8rem', '8rem'],
+    transition: {
+      duration: 12,
+      ease: 'easeInOut',
+      times: [0, 0.5, 1],
+      repeat: Infinity,
+      repeatType: 'loop' as const,
+    },
+  },
+};
+
+const cardVariantsSlider = {
+  initial: { y: 0, height: '12rem' },
+  animate: {
+    y: [0, 192, 384, 576, 768, 960],
+    height: ['12rem', '8rem', '8rem', '8rem', '8rem', '8rem'],
+    transition: {
+      duration: 24,
+      ease: 'easeInOut',
+      times: [0, 0.2, 0.4, 0.6, 0.8, 1],
       repeat: Infinity,
       repeatType: 'loop' as const,
     },
@@ -71,24 +161,79 @@ const Hero = () => {
           <div className="hidden lg:grid grid-cols-2 gap-4 h-[384px] border border-red-500 overflow-hidden">
             <div className="flex flex-col space-y-4">
               <motion.div
-                className="bg-blue-100 p-6 rounded-lg shadow-md h-48"
-                variants={cardVariantsAbove}
+                className="bg-blue-400 p-6 rounded-lg shadow-md h-48"
+                variants={cardVariantsSlider}
                 initial="initial"
                 animate="animate"
               >
-                <h3 className="text-lg font-semibold text-blue-600">Above Card</h3>
-                <p className="text-gray-600">Description for above card.</p>
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 1</h3>
+                <p className="text-gray-600">Description for slider card 1.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-500 p-6 rounded-lg shadow-md h-32"
+                variants={cardVariantsSlider}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 2</h3>
+                <p className="text-gray-600">Description for slider card 2.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-600 p-6 rounded-lg shadow-md h-32"
+                variants={cardVariantsSlider}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 3</h3>
+                <p className="text-gray-600">Description for slider card 3.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-700 p-6 rounded-lg shadow-md h-48"
+                variants={cardVariantsSlider}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 4</h3>
+                <p className="text-gray-600">Description for slider card 4.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-800 p-6 rounded-lg shadow-md h-48"
+                variants={cardVariantsSlider}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 5</h3>
+                <p className="text-gray-600">Description for slider card 5.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-900 p-6 rounded-lg shadow-md h-48"
+                variants={cardVariantsSlider}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Slider Card 6</h3>
+                <p className="text-gray-600">Description for slider card 6.</p>
               </motion.div>
             </div>
             <div className="flex flex-col space-y-4">
-              <div className="bg-blue-200 p-4 rounded-lg shadow-md h-32">
-                <h3 className="text-lg font-semibold text-blue-600">Card 3</h3>
-                <p className="text-gray-600">Description for card 3.</p>
-              </div>
-              <div className="bg-blue-100 p-6 rounded-lg shadow-md h-48">
-                <h3 className="text-lg font-semibold text-blue-600">Card 4</h3>
-                <p className="text-gray-600">Description for card 4.</p>
-              </div>
+              <motion.div
+                className="bg-blue-200 p-6 rounded-lg shadow-md h-48"
+                variants={cardVariantsTop}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Top Card</h3>
+                <p className="text-gray-600">Description for top card.</p>
+              </motion.div>
+              <motion.div
+                className="bg-blue-300 p-6 rounded-lg shadow-md h-32"
+                variants={cardVariantsMiddle}
+                initial="initial"
+                animate="animate"
+              >
+                <h3 className="text-lg font-semibold text-blue-600">Middle Card</h3>
+                <p className="text-gray-600">Description for middle card.</p>
+              </motion.div>
             </div>
           </div>
         </div>

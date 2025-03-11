@@ -3,7 +3,7 @@ import Image from 'next/image';
 const BenefitsSection = () => {
   const benefits = [
     {
-      icon: '/icons/institutional.svg',
+      icon: '/icons/Hug.svg',
       title: 'For Institutional Investors',
       points: [
         'Complete Automation of Asset Flows.',
@@ -13,7 +13,7 @@ const BenefitsSection = () => {
       ]
     },
     {
-      icon: '/icons/crypto.svg',
+      icon: '/icons/Investor.svg',
       title: 'For Crypto Investors',
       points: [
         'Variety of companies in which to invest.',
