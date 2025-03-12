@@ -20,16 +20,26 @@ const EasySteps = () => {
   ];
 
   return (
-    <section className="w-40% mx-auto py-12 bg-[9A99FF]">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 bg-[9A99FF] text-center">We do it easy, <span className="text-blue-600">take off seamless</span></h2>
-        <div className="flex flex-col space-y-8 bg-[9A99FF]">
+    <section className="w-full py-12 bg-white">
+      <div className="max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+          We do it easy, <span className="text-[#9A99FF]">take off seamless</span>
+        </h2>
+        <div className="flex flex-col space-y-8 items-center">
           {steps.map((step, index) => (
-            <div key={index} className="flex items-center space-x-4 bg-[9A99FF] ">
-              <span className="text-4xl font-bold text-blue-600">{step.number}</span>
-              <div className="flex items-center bg-[9A99FF] p-4 rounded-lg shadow-md w-full">
-                <Image src={step.icon} alt={step.description} width={40} height={40} className="mr-4" />
-                <p className="text-blue-600 font-medium">{step.description}</p>
+            <div key={index} className="flex items-center w-full max-w-2xl">
+              <span className="text-4xl font-bold text-[#597CE9] w-16 text-center">{step.number}</span>
+              <div className="flex items-center bg-[#E8ECFA] p-4 rounded-lg flex-1">
+                
+                  <Image 
+                    src={step.icon} 
+                    alt={step.description} 
+                    width={50} 
+                    height={50} 
+                    className="text-white" 
+                  />
+                
+                <p className="text-[#597CE9] ml-6 font-bold">{step.description}</p>
               </div>
             </div>
           ))}

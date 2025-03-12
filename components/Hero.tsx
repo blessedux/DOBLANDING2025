@@ -129,19 +129,29 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Content */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 4 }}
-            className="flex flex-col justify-center"
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6">
+          <div className="flex flex-col justify-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6"
+            >
               Access global financing within your reach
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, delay: 0.3 }}
+              className="text-xl md:text-2xl text-gray-600 mb-8"
+            >
               Agile, smart and simple!
-            </p>
-            <div className="flex flex-wrap gap-4">
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
               <Link 
                 href="/contact"
                 className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
@@ -154,11 +164,11 @@ const Hero = () => {
               >
                 Invest now
               </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Right Content - Animated Cards */}
-          <div className="hidden lg:grid grid-cols-2 gap-4 h-[384px] border border-red-500 overflow-hidden">
+          {/* Right Content - Animated Cards - No fade in animation */}
+          <div className="hidden lg:grid grid-cols-2 gap-4 h-[384px] overflow-hidden">
             <div className="flex flex-col space-y-4">
               <motion.div
                 className="bg-blue-400 p-6 rounded-lg shadow-md h-48"
