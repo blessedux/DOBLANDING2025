@@ -71,7 +71,7 @@ export default function CTA() {
           >
             <div className="w-full h-full" style={{ minHeight: '350px' }}>
               <Image
-                src="/icons/Video_APP.gif"
+                src="/icons/video_app.gif"
                 alt="DOB Protocol App Demo"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
