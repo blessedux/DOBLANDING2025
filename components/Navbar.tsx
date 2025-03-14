@@ -37,7 +37,7 @@ const Navbar = () => {
               aria-label="DOB Protocol - Home"
             >
               <Image 
-                src={theme === 'dark' ? "/dob_imagotipo_dark.svg" : "/dob_imagotipo.svg"} 
+                src="/dobprotocol-logo.svg" 
                 alt="DOB Protocol" 
                 width={180} 
                 height={180} 
