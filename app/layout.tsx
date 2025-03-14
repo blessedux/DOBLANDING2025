@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Roboto } from 'next/font/google'
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Script from 'next/script';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +25,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "DOB Protocol",
   description: "Decentralized Options for Bitcoin",
+  metadataBase: new URL('https://dobprotocol.com'),
 };
 
 export default function RootLayout({
@@ -33,9 +35,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.className}`}>
+      <head>
+        <meta httpEquiv="Cache-Control" content="public, max-age=31536000, immutable" />
+      </head>
       <body>
         <Navbar />
         {children}
+        {/* Script to handle ethereum-related errors */}
+        <Script src="/js/disable-crypto-errors.js" strategy="beforeInteractive" />
       </body>
     </html>
   );

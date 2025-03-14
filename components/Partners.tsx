@@ -10,18 +10,21 @@ const Partners = () => {
         <h2 className="text-lg font-medium text-gray-500 dark:text-gray-300 mb-8">Trusted by</h2>
         <div className="overflow-hidden">
           <div className="flex items-center space-x-8 animate-marquee whitespace-nowrap">
-            <Image src="/partners/polygon.svg" alt="Polygon" width={100} height={50} />
-            <Image src="/partners/base.svg" alt="Base" width={100} height={50} />
-            <Image src="/partners/ehive.svg" alt="eHive" width={100} height={50} />
-            <Image src="/partners/avalanche.svg" alt="Avalanche" width={100} height={50} />
-            <Image src="/partners/celo.svg" alt="Celo" width={100} height={50} />
-            <Image src="/partners/vara.svg" alt="Vara" width={100} height={50} />
-            <Image src="/partners/odisea.svg" alt="Odisea" width={100} height={50} />
-            <Image src="/partners/ents.svg" alt="Ents" width={70} height={50} />
-            <Image src="/partners/polygon.svg" alt="Polygon" width={100} height={50} />
-            <Image src="/partners/base.svg" alt="Base" width={100} height={50} />
-            <Image src="/partners/ehive.svg" alt="eHive" width={100} height={50} />
-            <Image src="/partners/avalanche.svg" alt="Avalanche" width={100} height={50} />
+            {/* Using unoptimized for SVG files and setting explicit priority */}
+            <Image src="/partners/polygon.svg" alt="Polygon" width={100} height={50} unoptimized priority />
+            <Image src="/partners/base.svg" alt="Base" width={100} height={50} unoptimized priority />
+            <Image src="/partners/ehive.svg" alt="eHive" width={100} height={50} unoptimized priority />
+            <Image src="/partners/avalanche.svg" alt="Avalanche" width={100} height={50} unoptimized priority />
+            <Image src="/partners/celo.svg" alt="Celo" width={100} height={50} unoptimized priority />
+            <Image src="/partners/vara.svg" alt="Vara" width={100} height={50} unoptimized priority />
+            <Image src="/partners/odisea.svg" alt="Odisea" width={100} height={50} unoptimized priority />
+            <Image src="/partners/ents.svg" alt="Ents" width={70} height={50} unoptimized priority />
+            
+            {/* Repeat for continuous effect */}
+            <Image src="/partners/polygon.svg" alt="Polygon" width={100} height={50} unoptimized priority />
+            <Image src="/partners/base.svg" alt="Base" width={100} height={50} unoptimized priority />
+            <Image src="/partners/ehive.svg" alt="eHive" width={100} height={50} unoptimized priority />
+            <Image src="/partners/avalanche.svg" alt="Avalanche" width={100} height={50} unoptimized priority />
           </div>
         </div>
       </div>
