@@ -32,11 +32,11 @@ const ProcessCards = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
             <FadeInOnScroll key={index} delay={0.2 * index} direction="up">
-              <div className="rounded-lg shadow-md flex flex-col h-full">
+              <div className="rounded-lg shadow-md flex flex-col h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#9A99FF]/30 cursor-pointer group">
                 <div className="flex-none h-32 bg-[#9A99FF] rounded-t-lg">
                   {/* Placeholder for video */}
                 </div>
-                <div className="flex-grow p-6 bg-[#597CE9] rounded-b-lg">
+                <div className="flex-grow p-6 bg-[#597CE9] rounded-b-lg transition-all duration-300 group-hover:bg-[#4A6FE0]">
                   <h3 className="text-lg font-semibold text-white mb-3">{card.title}</h3>
                   <p className="text-white text-sm">{card.description}</p>
                 </div>

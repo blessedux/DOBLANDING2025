@@ -9,7 +9,7 @@ const RealWorldApplication = () => {
   const config = {
     // Connector configuration
     connector: {
-      width: '80%', // Control the width of the connector
+      width: '70%', // Control the width of the connector
       height: '70%', // Control the height of the connector
       top: '150px',  // Position from top
       left: '15%',   // Position from left
@@ -17,8 +17,8 @@ const RealWorldApplication = () => {
     // Card positions - easily adjustable
     cards: {
       card1: { top: '0px', left: '0px' }, // Top left
-      card2: { top: '520px', left: 'calc(50% - 400px)' }, // Bottom center, moved down 800px
-      card3: { top: '300px', right: '0px' }, // Top right
+      card2: { top: '520px', left: 'calc(50% - 480px)' }, // Bottom center, moved down 800px
+      card3: { top: '360px', right: '0px' }, // Top right
     },
     // Card dimensions - consistent for all cards
     cardSize: {
@@ -64,7 +64,7 @@ const RealWorldApplication = () => {
         </FadeInOnScroll>
         
         <GlowCapture className="relative w-full">
-          <div className="relative max-w-5xl mx-auto min-h-[800px]">
+          <div className="relative max-w-5xl mx-auto min-h-[1000px]">
             {/* Connector SVG - Smaller and centered */}
             <FadeInOnScroll delay={0.4} direction="none">
               <Glow color="#C7F8FF">

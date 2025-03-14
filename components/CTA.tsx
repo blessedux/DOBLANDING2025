@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import FadeInOnScroll from './animations/FadeInOnScroll';
 
@@ -26,36 +25,39 @@ export default function CTA() {
             
             <FadeInOnScroll direction="none" delay={0.6}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
+                <a 
+                  href="https://t.me/dobprotocol_official"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-8 py-4 bg-gray-100 text-[#5F72E4] font-medium rounded-lg hover:bg-gray-200 transition-colors"
                 >
                   Contact us
-                </Link>
-                <Link 
-                  href="/invest"
+                </a>
+                <a 
+                  href="https://home.dobprotocol.com/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-8 py-4 bg-[#5F72E4] text-white font-medium rounded-lg hover:bg-[#4F62D4] transition-colors"
                 >
                   Invest now
-                </Link>
+                </a>
               </div>
             </FadeInOnScroll>
           </div>
           
           {/* Right image with Video_APP.gif */}
-          <div className="w-full md:w-1/2 bg-[#5F72E4] relative min-h-[350px] md:min-h-full">
-            <FadeInOnScroll direction="right" delay={0.4}>
-              <div className="absolute inset-0">
-                <Image
-                  src="/icons/Video_APP.gif"
-                  alt="DOB Protocol App Demo"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="w-full h-full"
-                  priority
-                />
-              </div>
-            </FadeInOnScroll>
+          <div className="w-full md:w-1/2 bg-[#5F72E4] relative overflow-hidden">
+            <div className="w-full h-full" style={{ minHeight: '350px' }}>
+              <Image
+                src="/icons/Video_APP.gif"
+                alt="DOB Protocol App Demo"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                priority
+                unoptimized
+              />
+            </div>
           </div>
         </div>
       </div>
