@@ -4,24 +4,28 @@ import Image from 'next/image';
 export default function Partners() {
   const partners = [
     { 
-      name: "Helium", 
-      description: "The people's wireless network", 
-      url: "https://www.helium.com/"
+      name: "Polygon", 
+      description: "Leading Ethereum scaling platform",
+      url: "https://polygon.technology/",
+      logo: "/partners/Polygon.svg"
     },
     { 
-      name: "Dimo", 
-      description: "Connecting the future of transportation",
-      url: "#"
+      name: "Avalanche", 
+      description: "Blazingly fast, low-cost blockchain",
+      url: "https://www.avax.network/",
+      logo: "/partners/Avalanche.svg"
     },
     { 
-      name: "Render", 
-      description: "Powering next-generation computing",
-      url: "#"
+      name: "Base", 
+      description: "Secure, low-cost Ethereum L2 solution",
+      url: "https://base.org/",
+      logo: "/partners/base.svg"
     },
     { 
-      name: "TAO", 
-      description: "Building smarter autonomous systems",
-      url: "https://bittensor.com/"
+      name: "Celo", 
+      description: "Mobile-first blockchain ecosystem",
+      url: "https://celo.org/",
+      logo: "/partners/Celo.svg"
     }
   ];
 
@@ -47,9 +51,16 @@ export default function Partners() {
               className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl transition-colors duration-300 hover:shadow-lg"
             >
               <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 shadow-sm dark:shadow-gray-900/10">
-                {/* Partner logo placeholder - replace with actual logos */}
-                <div className="w-16 h-16 bg-gray-200 dark:bg-gray-600 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 font-bold">
-                  {partner.name.charAt(0)}
+                {/* Partner logo */}
+                <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
+                  <Image 
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                    unoptimized
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-2 dark:text-gray-100">{partner.name}</h3>
