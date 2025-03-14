@@ -62,7 +62,7 @@ const rightBottomCardVariants = {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative min-h-[90vh] flex items-center pt-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Content */}
@@ -71,17 +71,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 dark:text-gray-100 mb-6"
             >
-              Access global financing within your reach
+              Turn Real-World Machines into Digital Investments
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.3 }}
-              className="text-xl md:text-2xl text-gray-600 mb-8"
+              className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Agile, smart and simple!
+              Own pieces of smart devices that earn money – from solar panels to WiFi networks
             </motion.p>
             <motion.div 
               initial={{ opacity: 0 }}
@@ -93,7 +93,7 @@ const Hero = () => {
                 href="https://t.me/dobprotocol_official"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                className="px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               >
                 Contact us
               </a>
@@ -101,7 +101,7 @@ const Hero = () => {
                 href="https://home.dobprotocol.com/home"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-[#4F46E5] text-white rounded-lg hover:bg-[#4338CA] transition-colors"
+                className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
               >
                 Invest now
               </a>
@@ -115,7 +115,7 @@ const Hero = () => {
               <div className="flex flex-col space-y-4">
                 {/* Top card (short) with cubes.gif */}
                 <motion.div
-                  className="rounded-lg shadow-md overflow-hidden h-32 relative"
+                  className="rounded-lg shadow-md overflow-hidden h-32 relative dark:shadow-gray-700/30"
                   variants={leftTopCardVariants}
                   initial="initial"
                   animate="animate"
@@ -131,7 +131,7 @@ const Hero = () => {
                 
                 {/* Bottom card (large) with mockup.mp4 */}
                 <motion.div
-                  className="rounded-lg shadow-md overflow-hidden h-48 relative"
+                  className="rounded-lg shadow-md overflow-hidden h-48 relative dark:shadow-gray-700/30"
                   variants={leftBottomCardVariants}
                   initial="initial"
                   animate="animate"
@@ -153,7 +153,7 @@ const Hero = () => {
               <div className="flex flex-col space-y-4">
                 {/* Top card (large) with dashboard.gif */}
                 <motion.div
-                  className="rounded-lg shadow-md overflow-hidden h-48 relative"
+                  className="rounded-lg shadow-md overflow-hidden h-48 relative dark:shadow-gray-700/30"
                   variants={rightTopCardVariants}
                   initial="initial"
                   animate="animate"
@@ -169,7 +169,7 @@ const Hero = () => {
                 
                 {/* Bottom card (short) with cubes.gif */}
                 <motion.div
-                  className="rounded-lg shadow-md overflow-hidden h-32 relative"
+                  className="rounded-lg shadow-md overflow-hidden h-32 relative dark:shadow-gray-700/30"
                   variants={rightBottomCardVariants}
                   initial="initial"
                   animate="animate"

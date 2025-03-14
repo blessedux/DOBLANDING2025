@@ -31,26 +31,30 @@ const FadeInOnScroll = ({
   });
 
   // Set the initial and animate states based on the direction
-  const getDirectionOffset = () => {
+  const getInitialOffset = () => {
     switch (direction) {
       case 'up':
-        return { y: 50 };
+        return { y: 50, x: 0 };
       case 'down':
-        return { y: -50 };
+        return { y: -50, x: 0 };
       case 'left':
-        return { x: 50 };
+        return { x: 50, y: 0 };
       case 'right':
-        return { x: -50 };
+        return { x: -50, y: 0 };
       case 'none':
-        return {};
+      default:
+        return { x: 0, y: 0 };
     }
+  };
+
+  const getAnimateValues = () => {
+    return { x: 0, y: 0, opacity: 1 };
   };
 
   useEffect(() => {
     if (inView) {
       controls.start({
-        opacity: 1,
-        ...getDirectionOffset(),
+        ...getAnimateValues(),
         transition: { 
           duration: duration, 
           delay: delay,
@@ -58,7 +62,7 @@ const FadeInOnScroll = ({
         },
       });
     }
-  }, [controls, inView, delay, duration, direction]);
+  }, [controls, inView, delay, duration]);
 
   return (
     <motion.div
@@ -66,7 +70,7 @@ const FadeInOnScroll = ({
       className={className}
       initial={{ 
         opacity: 0, 
-        ...getDirectionOffset(),
+        ...getInitialOffset(),
       }}
       animate={controls}
     >

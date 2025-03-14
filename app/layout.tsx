@@ -1,29 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Roboto } from 'next/font/google'
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from '@/context/ThemeContext';
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DOB Protocol",
-  description: "Decentralized Options for Bitcoin",
+  title: "DOB Protocol | Fractional Machine Ownership Platform",
+  description: "Invest in income-producing machines and technology assets through fractional ownership. Earn passive income from the machine economy.",
 };
 
 export default function RootLayout({
@@ -32,10 +18,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.className}`}>
-      <body>
-        <Navbar />
-        {children}
+    <html lang="en" className="dark">
+      <body className={inter.className}>
+        <ThemeProvider>
+          <Navbar />
+          <main className="pt-16">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
