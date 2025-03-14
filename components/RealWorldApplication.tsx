@@ -1,8 +1,12 @@
 'use client'
 import Image from 'next/image';
-import { useState } from 'react';
-import { GlowCapture, Glow } from '@codaworks/react-glow';
-import FadeInOnScroll from './animations/FadeInOnScroll';
+import { motion } from 'framer-motion';
+// We need to keep GlowCapture and Glow but handle them properly for client-side only
+import dynamic from 'next/dynamic';
+
+// Dynamically import react-glow components with no SSR
+const GlowCapture = dynamic(() => import('@codaworks/react-glow').then((mod) => mod.GlowCapture), { ssr: false });
+const Glow = dynamic(() => import('@codaworks/react-glow').then((mod) => mod.Glow), { ssr: false });
 
 const RealWorldApplication = () => {
   // Configuration for easy adjustment
@@ -27,16 +31,6 @@ const RealWorldApplication = () => {
     }
   };
 
-  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setHoverPosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
   const applications = [
     {
       icon: '/icons/Step 1 EV charger.png',
@@ -53,20 +47,32 @@ const RealWorldApplication = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-gray-50 relative">
+    <section className="w-full py-24 bg-gray-50 dark:bg-gray-800 relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto text-center px-4">
-        <FadeInOnScroll>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Real world application</h2>
-        </FadeInOnScroll>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">Real world application</h2>
+        </motion.div>
         
-        <FadeInOnScroll delay={0.2}>
-          <h3 className="text-4xl font-bold text-[#597CE9] mb-20">EV-Charger</h3>
-        </FadeInOnScroll>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h3 className="text-4xl font-bold text-[#597CE9] dark:text-[#6A8CF9] mb-20">EV-Charger</h3>
+        </motion.div>
         
         <GlowCapture className="relative w-full">
           <div className="relative max-w-5xl mx-auto min-h-[1000px]">
             {/* Connector SVG - Smaller and centered */}
-            <FadeInOnScroll delay={0.4} direction="none">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <Glow color="#C7F8FF">
                 <div 
                   className="absolute z-0" 
@@ -88,10 +94,14 @@ const RealWorldApplication = () => {
                   </div>
                 </div>
               </Glow>
-            </FadeInOnScroll>
+            </motion.div>
 
             {/* First card - Top left */}
-            <FadeInOnScroll delay={0.6} direction="left">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <div 
                 className="absolute z-20 transform hover:-translate-y-2 transition-transform" 
                 style={{ 
@@ -108,10 +118,14 @@ const RealWorldApplication = () => {
                   className="opacity-100"
                 />
               </div>
-            </FadeInOnScroll>
+            </motion.div>
 
             {/* Second card - Bottom center */}
-            <FadeInOnScroll delay={0.8} direction="up">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
               <div 
                 className="absolute z-20 transform hover:-translate-y-2 transition-transform" 
                 style={{ 
@@ -128,10 +142,14 @@ const RealWorldApplication = () => {
                   className="opacity-100"
                 />
               </div>
-            </FadeInOnScroll>
+            </motion.div>
 
             {/* Third card - Top right */}
-            <FadeInOnScroll delay={1.0} direction="right">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
               <div 
                 className="absolute z-20 transform hover:-translate-y-2 transition-transform" 
                 style={{ 
@@ -148,7 +166,7 @@ const RealWorldApplication = () => {
                   className="opacity-100"
                 />
               </div>
-            </FadeInOnScroll>
+            </motion.div>
           </div>
         </GlowCapture>
       </div>

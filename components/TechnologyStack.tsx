@@ -34,7 +34,6 @@ const TechnologyStack = () => {
           {techStack.map((tech, index) => {
             // Determine if this card is on the left (0, 2) or right (1, 3)
             const isLeftCard = index === 0 || index === 2;
-            const isRightCard = index === 1 || index === 3;
             
             return (
               <div 

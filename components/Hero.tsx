@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+// Remove unused import
+// import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 

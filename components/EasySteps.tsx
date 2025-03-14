@@ -20,16 +20,16 @@ const EasySteps = () => {
   ];
 
   return (
-    <section className="w-full py-12 bg-white">
+    <section className="w-full py-12 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-          We do it easy, <span className="text-[#9A99FF]">take off seamless</span>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
+          We do it easy, <span className="text-[#9A99FF] dark:text-[#AAAAF0]">take off seamless</span>
         </h2>
         <div className="flex flex-col space-y-8 items-center">
           {steps.map((step, index) => (
             <div key={index} className="flex items-center w-full max-w-2xl">
-              <span className="text-4xl font-bold text-[#597CE9] w-16 text-center">{step.number}</span>
-              <div className="flex items-center bg-[#E8ECFA] p-4 rounded-lg flex-1">
+              <span className="text-4xl font-bold text-[#597CE9] dark:text-[#6A8CF9] w-16 text-center">{step.number}</span>
+              <div className="flex items-center bg-[#E8ECFA] dark:bg-[#2D3B58] p-4 rounded-lg flex-1 transition-colors duration-300">
                 
                   <Image 
                     src={step.icon} 
@@ -39,7 +39,7 @@ const EasySteps = () => {
                     className="text-white" 
                   />
                 
-                <p className="text-[#597CE9] ml-6 font-bold">{step.description}</p>
+                <p className="text-[#597CE9] dark:text-[#7A9CF9] ml-6 font-bold">{step.description}</p>
               </div>
             </div>
           ))}

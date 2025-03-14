@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 interface FadeInOnScrollProps {
   children: ReactNode;
@@ -31,7 +31,7 @@ const FadeInOnScroll = ({
   });
 
   // Set the initial and animate states based on the direction
-  const getDirectionOffset = () => {
+  const getDirectionOffset = useCallback(() => {
     switch (direction) {
       case 'up':
         return { y: 50 };
@@ -44,7 +44,7 @@ const FadeInOnScroll = ({
       case 'none':
         return {};
     }
-  };
+  }, [direction]);
 
   useEffect(() => {
     if (inView) {
@@ -58,7 +58,7 @@ const FadeInOnScroll = ({
         },
       });
     }
-  }, [controls, inView, delay, duration, direction]);
+  }, [controls, inView, delay, duration, getDirectionOffset]);
 
   return (
     <motion.div
